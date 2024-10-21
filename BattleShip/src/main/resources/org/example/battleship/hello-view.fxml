@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:controller="org.example.battleship.client.ClientController" xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <Label fx:id="welcomeText" text="Welcome!" />
+    <Button text="Hello" onAction="#onHelloButtonClick"/>
+    <GridPane fx:id="grid" />
+</GridPane>
