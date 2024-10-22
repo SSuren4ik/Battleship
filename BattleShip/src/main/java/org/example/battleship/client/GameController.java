@@ -9,9 +9,9 @@ import org.example.battleship.server.SeaBattle;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.Random;
+import java.rmi.server.UnicastRemoteObject;
 
-public class GameController {
+public class GameController implements ClientCallback {
     SeaBattle seaBattle;
     @FXML
     private GridPane grid;
@@ -23,7 +23,6 @@ public class GameController {
 
     private static final String UNIQUE_BINDING_NAME = "server.sea_battle";
     private static final String HOST_NAME = "localhost";
-
     private static final int PORT = 2732;
 
     @FXML
@@ -37,16 +36,17 @@ public class GameController {
         try {
             Registry registry = LocateRegistry.getRegistry(HOST_NAME, PORT);
             seaBattle = (SeaBattle) registry.lookup(UNIQUE_BINDING_NAME);
-            Random random = new Random();
-            seaBattle.shoot(random.nextInt(10), random.nextInt(10));
-            seaBattle.shoot(random.nextInt(10), random.nextInt(10));
-            seaBattle.shoot(random.nextInt(10), random.nextInt(10));
+
+            ClientCallback callback = (ClientCallback) UnicastRemoteObject.exportObject(this, 0);
+            seaBattle.registerClient(callback);
 
             System.out.println("Подключен к серверу");
         } catch (Exception e) {
-            System.out.println("Ошибка подключения к серверу: " + e.getMessage());
+            System.out.println("Ошибка: " + e.getMessage());
+            System.exit(1);
         }
     }
+
 
     private void initializeCellButtons() {
         try {
@@ -54,8 +54,9 @@ public class GameController {
             for (int row = 0; row < 10; row++) {
                 for (int col = 0; col < 10; col++) {
                     cellButtons[row][col] = getButtonAtPosition(row, col);
-                    if (ships[row][col])
-                        cellButtons[row][col].setStyle("-fx-background-color: black");
+                    if (ships[row][col]) {
+                        cellButtons[row][col].setStyle("-fx-background-color: black"); // Отмечаем корабли черным
+                    }
                 }
             }
         } catch (RemoteException e) {
@@ -74,16 +75,24 @@ public class GameController {
 
     private void createGrid() {
         try {
-            boolean[][] field = seaBattle.getShootsField();
+            updateField(seaBattle.getShootsField());
+        } catch (RemoteException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
+    @Override
+    public void updateField(boolean[][] shots) throws RemoteException {
+        // Этот метод будет вызван сервером при обновлении поля
+        Platform.runLater(() -> {
             for (int row = 0; row < 10; row++) {
                 for (int col = 0; col < 10; col++) {
-                    cellButtons[row][col].setText(field[row][col] ? "True" : "False");
+                    if (shots[row][col]) {
+                        cellButtons[row][col].setStyle("-fx-background-color: red"); // Отмечаем выстрелы красным
+                    }
                 }
             }
-        } catch (RemoteException e) {
-            System.out.println("Ошибка получения поля: " + e.getMessage());
-        }
+        });
     }
 
     @FXML
@@ -93,10 +102,8 @@ public class GameController {
                 int row = GridPane.getRowIndex(selectedButton);
                 int col = GridPane.getColumnIndex(selectedButton);
 
-                seaBattle.getShootsField()[row][col] = true;
-
-                selectedButton.setText("true");
-                selectedButton.setStyle("");
+                seaBattle.shoot(row, col);
+                selectedButton.setStyle(""); // Сброс стиля кнопки
                 selectedButton = null;
             } catch (RemoteException e) {
                 System.out.println("Ошибка при стрельбе: " + e.getMessage());
@@ -113,18 +120,5 @@ public class GameController {
         }
         selectedButton = (Button) event.getSource(); // Запоминаем выбранную кнопку
         selectedButton.setStyle("-fx-background-color: yellow"); // Выделяем выбранную кнопку
-        printFieldShots();
     }
-
-    public void printFieldShots() {
-        for (int row = 0; row < 10; row++) {
-            for (int col = 0; col < 10; col++) {
-                String text = cellButtons[row][col].getText();
-                System.out.print(text + " ");
-            }
-            System.out.println("");
-        }
-        System.out.println();
-    }
-
 }
