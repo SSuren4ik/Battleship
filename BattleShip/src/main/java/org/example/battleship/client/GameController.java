@@ -12,7 +12,9 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class GameController implements ClientCallback {
+
     SeaBattle seaBattle;
+
     @FXML
     private GridPane grid;
 
@@ -28,8 +30,20 @@ public class GameController implements ClientCallback {
     @FXML
     public void initialize() {
         initializeConnection();
+        initializeDisconnection();
         initializeCellButtons();
-        Platform.runLater(this::createGrid);
+        createGrid();
+    }
+
+    private void initializeDisconnection() {
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            try {
+                unregisterClient();
+                System.out.println("Клиент отключен при завершении программы");
+            } catch (RemoteException e) {
+                System.out.println("Ошибка при отключении: " + e.getMessage());
+            }
+        }));
     }
 
     private void initializeConnection() {
@@ -47,6 +61,12 @@ public class GameController implements ClientCallback {
         }
     }
 
+    private void unregisterClient() throws RemoteException {
+        if (seaBattle != null) {
+            seaBattle.unregisterClient(this);
+            System.out.println("Клиент успешно удален из списка.");
+        }
+    }
 
     private void initializeCellButtons() {
         try {
@@ -74,21 +94,22 @@ public class GameController implements ClientCallback {
     }
 
     private void createGrid() {
-        try {
-            updateField(seaBattle.getShootsField());
-        } catch (RemoteException e) {
-            System.out.println(e.getMessage());
-        }
+        Platform.runLater(() -> {
+            try {
+                updateField(seaBattle.getShootsField());
+            } catch (RemoteException e) {
+                System.out.println(e.getMessage());
+            }
+        });
     }
 
     @Override
     public void updateField(boolean[][] shots) throws RemoteException {
-        // Этот метод будет вызван сервером при обновлении поля
         Platform.runLater(() -> {
             for (int row = 0; row < 10; row++) {
                 for (int col = 0; col < 10; col++) {
                     if (shots[row][col]) {
-                        cellButtons[row][col].setStyle("-fx-background-color: red"); // Отмечаем выстрелы красным
+                        cellButtons[row][col].setStyle("-fx-background-color: red");
                     }
                 }
             }

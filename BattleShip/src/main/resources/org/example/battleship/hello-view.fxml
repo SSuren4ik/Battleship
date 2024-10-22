@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="MainPane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.battleship.client.GameController">
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.battleship.client.GameController">
     <center>
         <GridPane fx:id="grid" alignment="CENTER" hgap="10" prefHeight="419.0" prefWidth="611.0" vgap="10">
             <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0" GridPane.rowIndex="0" />
