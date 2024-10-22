@@ -27,7 +27,12 @@ public class SeaBattleImpl implements SeaBattle {
     }
 
     @Override
-    public boolean[][] getField() throws RemoteException {
+    public boolean[][] getShipsField() throws RemoteException {
+        return ships;
+    }
+
+    @Override
+    public boolean[][] getShootsField() throws RemoteException {
         return shots;
     }
 }

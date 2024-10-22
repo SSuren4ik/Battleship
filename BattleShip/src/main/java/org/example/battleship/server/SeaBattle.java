@@ -6,5 +6,6 @@ import java.rmi.RemoteException;
 public interface SeaBattle extends Remote {
     boolean shoot(int x, int y) throws RemoteException;
 
-    boolean[][] getField() throws RemoteException;
+    boolean[][] getShipsField() throws RemoteException;
+    boolean[][] getShootsField() throws RemoteException;
 }

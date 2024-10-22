@@ -2,9 +2,221 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<BorderPane fx:id="MainPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12"
+            fx:controller="org.example.battleship.client.GameController">
+    <center>
+        <GridPane fx:id="grid" alignment="CENTER" hgap="10" prefHeight="500.0" prefWidth="500.0" vgap="10">
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="0"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="0"/>
 
-<GridPane fx:controller="org.example.battleship.client.ClientController" xmlns:fx="http://javafx.com/fxml" alignment="center">
-    <Label fx:id="welcomeText" text="Welcome!" />
-    <Button text="Hello" onAction="#onHelloButtonClick"/>
-    <GridPane fx:id="grid" />
-</GridPane>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="1"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="1"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="2"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="2"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="3"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="3"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="4"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="4"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="5"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="5"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="6"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="6"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="7"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="7"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="8"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="8"/>
+
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="0"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="1"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="2"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="3"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="4"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="5"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="6"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="7"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="8"
+                    GridPane.rowIndex="9"/>
+            <Button minHeight="30" minWidth="30" onAction="#onCellClick" GridPane.columnIndex="9"
+                    GridPane.rowIndex="9"/>
+        </GridPane>
+    </center>
+    <bottom>
+    </bottom>
+</BorderPane>
