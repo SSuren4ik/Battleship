@@ -13,9 +13,9 @@ public interface SeaBattle extends Remote {
 
     boolean[][] getShootsField() throws RemoteException;
 
-    // Регистрация клиента
     void registerClient(ClientCallback client) throws RemoteException;
 
-    // Удаление клиента
     void unregisterClient(ClientCallback client) throws RemoteException;
+
+    boolean foundName(String name)throws RemoteException;
 }

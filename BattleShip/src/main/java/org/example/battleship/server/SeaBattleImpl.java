@@ -2,7 +2,6 @@ package org.example.battleship.server;
 
 import org.example.battleship.client.ClientCallback;
 
-import java.lang.reflect.Executable;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +45,7 @@ public class SeaBattleImpl implements SeaBattle {
 
     @Override
     public void registerClient(ClientCallback client) throws RemoteException {
+        System.out.println("Client name " + client.getName());
         if (clients.size() < MAX_CLIENTS)
             clients.add(client);
         else
@@ -57,6 +57,17 @@ public class SeaBattleImpl implements SeaBattle {
         clients.remove(client);
     }
 
+    @Override
+    public boolean foundName(String name) throws RemoteException {
+        for (ClientCallback clientCallback : clients) {
+            if (name.equals(clientCallback.getName())) {
+                System.out.println("client Name already registered: " + clientCallback.getName());
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void notifyClients() {
         for (ClientCallback client : clients) {
             try {
@@ -66,4 +77,5 @@ public class SeaBattleImpl implements SeaBattle {
             }
         }
     }
+
 }

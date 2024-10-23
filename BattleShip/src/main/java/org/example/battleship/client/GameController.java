@@ -13,7 +13,9 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class GameController implements ClientCallback {
 
-    SeaBattle seaBattle;
+    private SeaBattle seaBattle;
+
+    private String clientName;
 
     @FXML
     private GridPane grid;
@@ -27,8 +29,8 @@ public class GameController implements ClientCallback {
     private static final String HOST_NAME = "localhost";
     private static final int PORT = 2732;
 
-    @FXML
-    public void initialize() {
+    public void initController(String clientName) {
+        this.clientName = clientName;
         initializeConnection();
         initializeDisconnection();
         initializeCellButtons();
@@ -114,6 +116,11 @@ public class GameController implements ClientCallback {
                 }
             }
         });
+    }
+
+    @Override
+    public String getName() throws RemoteException {
+        return clientName;
     }
 
     @FXML
